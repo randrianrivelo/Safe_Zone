@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: smart-safezone-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD:-root}
+      MYSQL_DATABASE: ${DATABASE_NAME:-smart_safezone}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - smart-safezone-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smart-safezone-backend
+    environment:
+      DATABASE_USER: ${DATABASE_USER:-root}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-root}
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: ${DATABASE_NAME:-smart_safezone}
+      SECRET_KEY: ${SECRET_KEY:-your-secret-key-change-in-production}
+    ports:
+      - "8000:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - smart-safezone-network
+    volumes:
+      - ./backend/app:/app/backend/app
+
+  frontend:
+    image: node:18-alpine
+    container_name: smart-safezone-frontend
+    working_dir: /app/frontend
+    volumes:
+      - ./frontend:/app/frontend
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev"
+    networks:
+      - smart-safezone-network
+
+volumes:
+  mysql_data:
+
+networks:
+  smart-safezone-network:
+    driver: bridge
