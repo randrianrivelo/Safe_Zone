@@ -87,18 +87,13 @@ export default function DynamicBackground({ showControls = true }) {
         zIndex: -1, transition: 'background 0.5s'
       }} />
 
-      {/* Horloge */}
-      <div style={{
-        position: 'fixed', top: 14, left: 18, zIndex: 2001,
-        background: 'var(--bg-glass, rgba(255,255,255,0.6))',
-        backdropFilter: 'blur(20px)',
-        border: '1px solid var(--border, #87ADC6)',
-        borderRadius: 12, padding: '7px 14px',
-        display: 'flex', alignItems: 'center', gap: 8,
-        boxShadow: 'var(--shadow, 0 8px 32px rgba(0,0,0,0.15))'
-      }}>
-        <i className="bi bi-clock-fill" style={{ color: 'var(--safe, #1fbc34)' }} />
-        <div>
+      {/* Horloge (draggable) */}
+      <div
+        className="sz-dynclock"
+        style={{ position: 'fixed', top: 14, left: 18, zIndex: 2001, cursor: 'grab' }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <i className="bi bi-clock-fill" style={{ color: 'var(--safe, #1fbc34)' }} />
           <div style={{
             fontFamily: 'monospace', fontWeight: 700,
             fontSize: '0.9rem', color: 'var(--text-primary, #203038)',
