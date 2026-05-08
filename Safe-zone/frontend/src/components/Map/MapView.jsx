@@ -12,10 +12,14 @@ L.Icon.Default.mergeOptions({
 const userIcon = new L.DivIcon({ html: '<div class="user-marker-icon"></div>', className: '', iconSize: [22, 22], iconAnchor: [11, 11] })
 
 function refugeIcon(r, sel) {
-  const avail = r.capacity - (r.current_occupancy || 0)
+  const occupancy = r.current_occupancy ?? r.occupancy ?? 0
+  const capacity = r.capacity ?? 0
+  const avail = capacity - occupancy
+
   let c = 'safe'
   if (avail <= 0) c = 'danger'
   else if (avail < 50 || sel) c = 'warning'
+
   return new L.DivIcon({ html: `<div class="refuge-marker-icon ${c}">🏠</div>`, className: '', iconSize: [36, 36], iconAnchor: [18, 18] })
 }
 
@@ -55,7 +59,9 @@ export default function MapView({ userPosition, refuges = [], dangerZones = [], 
                   <span>Capacite</span><strong style={{ color: 'var(--text-primary)' }}>{r.capacity}</strong>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                  <span>Disponible</span><strong style={{ color: (r.capacity - r.current_occupancy) > 0 ? 'var(--safe)' : 'var(--danger)' }}>{r.capacity - (r.current_occupancy || 0)}</strong>
+                  <span>Disponible</span><strong style={{ color: (r.capacity - (r.current_occupancy ?? r.occupancy ?? 0)) > 0 ? 'var(--safe)' : 'var(--danger)' }}>
+                    {r.capacity - ((r.current_occupancy ?? r.occupancy ?? 0) || 0)}
+                  </strong>
                 </div>
                 {r.distance_km !== undefined && (
                   <p style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600, marginTop: 8 }}>

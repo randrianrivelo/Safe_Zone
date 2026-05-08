@@ -1,0 +1,3 @@
+/* Minimal CSS to ensure LoginPage imports don't fail */
+.login-page{min-height:100vh}
+

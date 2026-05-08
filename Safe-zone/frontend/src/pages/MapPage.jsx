@@ -7,6 +7,8 @@ import SearchFilter from '../components/UI/SearchFilter'
 import { useGeolocation } from '../hooks/useGeolocation'
 import { refugeService, pathfindingService, zoneService } from '../services/api'
 import { useToast } from '../context/ToastContext'
+import './MapPage.css'
+
 
 export default function MapPage() {
   const { position, loading: geoLoading } = useGeolocation()
