@@ -1,0 +1,209 @@
+.about-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.about-page__main {
+  padding: 80px 32px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-page__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.about-page__card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.about-page__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+}
+
+.about-page__card-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-light);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.about-page__card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.about-page__card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about-page__list {
+  list-style: none;
+  padding: 0;
+}
+
+.about-page__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  color: var(--text-secondary);
+}
+
+.about-page__list li i {
+  color: var(--accent);
+  width: 20px;
+}
+
+.about-page__tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.about-page__tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+}
+
+.about-page__tech-item i {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.about-page__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.about-page__stat {
+  text-align: center;
+  padding: 16px;
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+}
+
+.about-page__stat-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+}
+
+.about-page__stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.about-page__partners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-page__partner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+}
+
+.about-page__partner i {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.about-page__partner span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.about-page__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.about-page__btn {
+  padding: 12px 28px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.about-page__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-sm);
+}
+
+/* Mode clair */
+[data-theme="light"] .about-page {
+  background: #e8ecf0;
+}
+
+[data-theme="light"] .about-page__card {
+  background: #ffffff;
+  border-color: #dde3ea;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .about-page__tech-item,
+[data-theme="light"] .about-page__stat,
+[data-theme="light"] .about-page__partner {
+  background: #f8fafc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-page__main {
+    padding: 70px 16px 24px;
+  }
+  .about-page__stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-page__tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-page__actions {
+    flex-direction: column;
+  }
+}

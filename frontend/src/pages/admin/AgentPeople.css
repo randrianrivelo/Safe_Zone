@@ -1,0 +1,537 @@
+/* Agent People */
+.agent-people {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.agent-people__main {
+  padding: 80px 32px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header */
+.agent-people__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.agent-people__header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.agent-people__header p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.agent-people__add-btn {
+  padding: 10px 20px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--glow-xs);
+  transition: var(--transition);
+}
+
+.agent-people__add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-sm);
+}
+
+/* Formulaire */
+.agent-people__form {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.agent-people__form h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-people__form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.agent-people__form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.agent-people__form-field label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.agent-people__form-field input,
+.agent-people__form-field select {
+  padding: 9px 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition);
+}
+
+.agent-people__form-field input:focus,
+.agent-people__form-field select:focus {
+  border-color: var(--accent);
+}
+
+.agent-people__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.agent-people__submit-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--glow-xs);
+  transition: var(--transition);
+}
+
+.agent-people__submit-btn:hover {
+  box-shadow: var(--glow-sm);
+}
+
+/* Stats */
+.agent-people__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.agent-people__stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.agent-people__stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+}
+
+.agent-people__stat-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: 1.2rem;
+}
+
+.agent-people__stat-info {
+  flex: 1;
+}
+
+.agent-people__stat-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1.2;
+}
+
+.agent-people__stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Controls */
+.agent-people__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.agent-people__tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.agent-people__tab {
+  padding: 8px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.agent-people__tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.agent-people__tab.active {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.agent-people__search {
+  position: relative;
+  min-width: 250px;
+}
+
+.agent-people__search i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.agent-people__search input {
+  width: 100%;
+  padding: 9px 14px 9px 36px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition);
+}
+
+.agent-people__search input:focus {
+  border-color: var(--accent);
+}
+
+/* Table */
+.agent-people__list {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: auto;
+}
+
+.agent-people__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.agent-people__table thead tr {
+  background: var(--bg-input);
+  border-bottom: 1px solid var(--border);
+}
+
+.agent-people__table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.agent-people__table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+
+.agent-people__table tbody tr:hover {
+  background: var(--bg-input);
+}
+
+.agent-people__need-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background: rgba(255,59,48,0.1);
+  border-radius: var(--radius-sm);
+  color: #ff3b30;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.agent-people__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.agent-people__status-badge--present {
+  background: rgba(57,255,136,0.12);
+  color: #39ff88;
+  border: 1px solid rgba(57,255,136,0.2);
+}
+
+.agent-people__status-badge--injured {
+  background: rgba(255,59,48,0.12);
+  color: #ff3b30;
+  border: 1px solid rgba(255,59,48,0.2);
+}
+
+.agent-people__action-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  transition: var(--transition);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.agent-people__action-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.agent-people__action-btn--depart {
+  background: rgba(255,59,48,0.12);
+  color: #ff3b30;
+}
+
+.agent-people__action-btn--depart:hover {
+  background: #ff3b30;
+  color: #ffffff;
+}
+
+/* Empty */
+.agent-people__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.agent-people__empty i {
+  font-size: 2.5rem;
+}
+
+/* Loading */
+.agent-people__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+/* Modal */
+.agent-people__modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.agent-people__modal-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 450px;
+  animation: scaleIn 0.2s ease;
+}
+
+.agent-people__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.agent-people__modal-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-people__modal-close {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.agent-people__modal-close:hover {
+  color: #ff3b30;
+  border-color: #ff3b30;
+}
+
+.agent-people__modal-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agent-people__modal-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.agent-people__modal-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.agent-people__modal-actions {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.agent-people__modal-btn {
+  padding: 8px 20px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.agent-people__modal-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--glow-sm);
+}
+
+/* Mode clair */
+[data-theme="light"] .agent-people {
+  background: #e8ecf0;
+}
+
+[data-theme="light"] .agent-people__stat-card,
+[data-theme="light"] .agent-people__list,
+[data-theme="light"] .agent-people__form {
+  background: #ffffff;
+  border-color: #dde3ea;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .agent-people__table tbody tr:hover {
+  background: #f8fafc;
+}
+
+[data-theme="light"] .agent-people__modal-content {
+  background: #ffffff;
+  border-color: #dde3ea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .agent-people__main {
+    padding: 70px 16px 24px;
+  }
+  .agent-people__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .agent-people__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .agent-people__table {
+    font-size: 0.75rem;
+  }
+  .agent-people__table th,
+  .agent-people__table td {
+    padding: 8px 10px;
+  }
+}

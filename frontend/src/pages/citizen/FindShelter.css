@@ -1,0 +1,66 @@
+.find { min-height: 100vh; background: var(--bg-primary); color: var(--text-primary); }
+.find__main { padding: 80px 32px 40px; max-width: 1200px; margin: 0 auto; }
+.find__title {
+  font-size: 1.5rem; font-weight: 700;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 24px;
+}
+.find__controls { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.find__search {
+  flex: 1; min-width: 200px; position: relative;
+}
+.find__search i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+.find__search input {
+  width: 100%; padding: 10px 14px 10px 36px;
+  background: var(--bg-input); border: 1px solid var(--border);
+  border-radius: var(--radius-md); color: var(--text-primary);
+  font-size: 0.88rem; font-family: inherit; outline: none;
+}
+.find__search input:focus { border-color: var(--accent); }
+.find__filter {
+  padding: 10px 14px; background: var(--bg-input);
+  border: 1px solid var(--border); border-radius: var(--radius-md);
+  color: var(--text-primary); font-size: 0.85rem; font-family: inherit;
+  outline: none;
+}
+.find__count { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
+
+.find__grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.find__card {
+  background: var(--glass-bg); backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 20px; display: flex; flex-direction: column; gap: 8px;
+  transition: var(--transition);
+}
+.find__card:hover { border-color: var(--border-accent); transform: translateY(-4px); box-shadow: var(--glow-xs); }
+.find__card-header { display: flex; align-items: center; justify-content: space-between; }
+.find__card-icon {
+  width: 36px; height: 36px; display: flex; align-items: center;
+  justify-content: center; background: var(--accent-light);
+  border: 1px solid var(--border-accent); border-radius: var(--radius-sm);
+  color: var(--accent);
+}
+.find__card-type { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+.find__card h3 { font-size: 0.92rem; }
+.find__card-address { font-size: 0.8rem; color: var(--text-muted); }
+.find__card-bar-wrap { width: 100%; height: 5px; background: var(--bg-input); border-radius: 3px; overflow: hidden; }
+.find__card-bar { height: 100%; border-radius: 3px; }
+.find__card-cap { font-size: 0.78rem; font-weight: 600; }
+.find__card-services { display: flex; gap: 8px; font-size: 1rem; }
+.find__card-btn {
+  padding: 8px; background: var(--accent-light);
+  border: 1px solid var(--border-accent); border-radius: var(--radius-sm);
+  color: var(--accent); font-size: 0.82rem; font-weight: 600;
+  font-family: inherit; cursor: pointer; display: flex;
+  align-items: center; justify-content: center; gap: 4px;
+  transition: var(--transition);
+}
+.find__card-btn:hover { background: var(--accent); color: #ffffff; }
+
+[data-theme="light"] .find { background: #e8ecf0; }
+[data-theme="light"] .find__card { background: #ffffff; border-color: #dde3ea; }
+[data-theme="light"] .find__search input { background: #ffffff; border-color: #dde3ea; }
+[data-theme="light"] .find__filter { background: #ffffff; border-color: #dde3ea; }

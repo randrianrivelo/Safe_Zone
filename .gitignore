@@ -1,0 +1,33 @@
+﻿# Dépendances et environnements Python / Node.js
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Secrets et configurations locales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Journaux, bases de données et données locales
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+backend/app/data/emergency_code.json
+
+# Fichiers générés
+dist/
+build/
+.expo/
+coverage/
+
+# Éditeurs et système
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

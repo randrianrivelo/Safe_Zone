@@ -1,0 +1,51 @@
+/* ─── ENTRANCE ANIMATIONS ─────────────────────────────────── */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+
+/* ─── CLASSES ─────────────────────────────────────────────── */
+.anim-slide-left  { animation: slideInLeft  0.4s ease forwards; }
+.anim-slide-right { animation: slideInRight 0.4s ease forwards; }
+.anim-slide-up    { animation: slideInUp    0.4s ease forwards; }
+.anim-scale-in    { animation: scaleIn      0.3s ease forwards; }
+.anim-float       { animation: float        3s ease infinite; }
+.anim-glow-pulse  { animation: glowPulse    2s ease infinite; }
+.anim-marquee     { animation: marquee      20s linear infinite; }
+
+/* ─── DELAYS ──────────────────────────────────────────────── */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
